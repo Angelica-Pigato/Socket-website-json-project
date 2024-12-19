@@ -1,0 +1,176 @@
+{
+  "index_text": [
+    {
+      "text": "Le socket sono uno degli strumenti fondamentali per la comunicazione tra dispositivi in una rete. In questo sito, esploreremo il loro funzionamento, le tipologie e il processo di comunicazione server-client, oltre a concetti comuni in Informatica e Sistemi e Reti."
+    },
+    {
+      "image": "SchemaSocket.png"
+    },
+    {
+      "text": "Nel sito sono presenti definizioni chiare riguardo le socket, le loro funzionalità, le tipologie e la comunicazione che esse svolgono. Inoltre, viene riportato un esempio di connessione tramite socket attraverso VSCode: i due codici mostrano i due diversi programmi che devono essere compilati per ottenere una connesione di tipo Server-Client."
+    },
+    {
+      "text": "Le socket non sono tutte uguali, infatti in questo sito scoprirai la differenza tra una Socket Stream e una Socket Datagram, oltre che ad una descrizione dettagliata della comunicazione Serve-Client. Il modello OSI è fondamentale per la comunicazione, in questo sito conoscerai la composizione della pila ISO/OSI, i suoi livelli e, in particolare, la funzionalità del livello 4 di trasporto. Due dei protocolli più importanti per la comunicazione sono il TCP e l'UDP, nella pagina relativa troverai le loro descrizioni, le caratteristiche, i ruoli e le principali differenze. Infine, se qualche concetto non ti risulta chiaro, consulta la pagina dedicata al glossario, troverai le definizioni più ricorrenti nel sito."
+    }
+  ],
+  "osi_text": [
+    {
+      "text": "Il modello OSI (Open Systems Interconnection) è un modello di riferimento utilizzato per comprendere e standardizzare il funzionamento delle reti di comunicazione. È stato sviluppato dall'ISO (International Organization for Standardization) negli anni '80 per promuovere l'interoperabilità tra diversi sistemi di rete."
+    },
+    {
+      "text": "Il modello OSI è composto da 7 livelli, ognuno dei quali rappresenta una funzione specifica nel processo di comunicazione tra due dispositivi. Ogni livello è progettato per eseguire un compito specifico e comunica con il livello direttamente sopra e sotto di esso."
+    }
+  ],
+  "osi_text2": [
+    {
+      "text": "La pila ISO/OSI è formata da 7 livelli: fisico, collegamento, rete, trasporto, sessione, presentazione, applicazione."
+    },
+    {
+      "text": "Ogni livello è collegato all'altro e contribuisce alla comunicazione e all'invio di dati. I dati vengono passati per i vari livelli, fino al livello 1 (fisico) prima di essere trasmessi fisicamente alla rete."
+    }
+  ],
+  "osi_text3": [
+    {
+      "text": "Il Livello 4: Trasporto (Transport Layer) del modello OSI (Open Systems Interconnection) è un livello cruciale che si occupa di garantire la trasmissione affidabile dei dati tra due dispositivi su una rete. È il livello che gestisce il flusso e la corretta consegna dei dati, assicurandosi che i dati inviati dal mittente arrivino al destinatario in modo preciso, senza errori e nell'ordine giusto."
+    },
+    {
+      "text": "Il livello di trasporto è responsabile di garantire la consegna affidabile dei dati tra il mittente e il destinatario. Questo include il controllo degli errori e la ritrasmissione dei pacchetti persi."
+    },
+    {
+      "text": "Il trasporto gestisce la velocità di trasmissione dei dati per evitare che il ricevente venga sopraffatto da troppe informazioni in un breve periodo. Il livello di trasporto consente la multiplexazione delle comunicazioni. Ciò significa che più flussi di dati provenienti da diverse applicazioni possono essere inviati tramite la stessa connessione di rete."
+    },
+    {
+      "text": "Il protocollo di trasporto assegna un numero di porta univoco per ogni connessione, che consente a più applicazioni di condividere la stessa rete senza interferire tra loro. Il livello 4 fornisce un controllo degli errori a livello di segmenti. Ad esempio, TCP include un controllo di errore tramite un checksum che verifica l'integrità dei dati trasmessi e permette di rilevare eventuali modifiche nei dati."
+    }
+  ],
+  "socket_text": [
+    {
+      "text": "Una socket è un'interfaccia software che consente la comunicazione tra due applicazioni su una rete, come ad esempio un server e un client. Le socket vengono utilizzate per inviare e ricevere dati tra dispositivi su una rete, come Internet o una rete locale (LAN). Esse permettono la comunicazione tra applicazioni su diversi dispositivi, indipendentemente dalla loro posizione fisica, permettendo di utilizzare protocolli di rete come TCP (Transmission Control Protocol) o UDP (User Datagram Protocol)."
+    }
+  ],
+  "socket_text2": [
+    {
+      "text": "I socket stream utilizzano il protocollo TCP (Transmission Control Protocol), che è un protocollo orientato alla connessione. Questi socket sono utilizzati per comunicazioni affidabili, in cui i dati vengono trasmessi in modo sequenziale, senza errori e senza perdita di pacchetti."
+    },
+    {
+      "text": "Caratteristiche principali: orientati alla connessione, ossia prima che i dati possano essere inviati, deve essere stabilita una connessione tra il client e il server. Affidabilità: TCP garantisce che i dati vengano ricevuti correttamente, gestendo il controllo degli errori, il riordino dei pacchetti e la ritrasmissione dei pacchetti persi. Flusso di byte: I dati vengono inviati come un flusso continuo di byte, senza delimitatori tra i pacchetti."
+    },
+    {
+      "text": "Controllo del flusso e congestione: TCP include meccanismi di controllo del flusso (per evitare che il destinatario venga sopraffatto) e controllo della congestione (per gestire la capacità della rete). Tipico utilizzo: trasmissione di file, applicazioni web (HTTP/HTTPS), email (SMTP, IMAP), chat in tempo reale."
+    }
+  ],
+  "socket_text3": [
+    {
+      "text": "I socket datagram utilizzano il protocollo UDP (User Datagram Protocol), che è un protocollo senza connessione. A differenza di TCP, UDP non garantisce la consegna dei pacchetti, l'ordine o la protezione contro gli errori."
+    },
+    {
+      "text": "Senza connessione, ossia non è necessario stabilire una connessione tra client e server prima di inviare i dati. Ogni pacchetto (datagramma) viene inviato individualmente. Non affidabile: UDP non garantisce che i pacchetti arrivino a destinazione, né che arrivino nell'ordine corretto. Non esegue alcun controllo di errore o ritrasmissione. Basso overhead: Poiché UDP non ha i meccanismi di gestione di connessione e di errore di TCP, ha un overhead minore e quindi è più veloce. Meno flessibilità: Non esiste un flusso continuo di byte. Ogni invio è indipendente, quindi occorre includere il contesto nel messaggio stesso, se necessario."
+    },
+    {
+      "text": "Tipico utilizzo: streaming video o audio in tempo reale (dove la perdita di qualche pacchetto non è critica), giochi online in tempo reale, DNS (Domain Name System), trasmissioni broadcast o multicast."
+    }
+  ],
+  "tcp_udp_text": [
+    {
+      "text": "Il TCP (Transmission Control Protocol) è un protocollo di trasporto che fa parte del modello OSI (livello 4) ed è uno dei protocolli fondamentali della suite di protocolli di Internet, nota come TCP/IP. TCP è progettato per garantire una comunicazione affidabile e ordinata tra due dispositivi su una rete, come ad esempio tra un client e un server. È un protocollo orientato alla connessione, il che significa che stabilisce una connessione tra il mittente e il destinatario prima di inviare i dati."
+    },
+    {
+      "text": "Prima di trasmettere i dati, TCP stabilisce una connessione tra il mittente e il destinatario attraverso un processo noto come three-way handshake (stretta di mano a tre vie). Solo dopo che questa connessione è stata stabilita, i dati possono essere inviati. TCP garantisce che i dati inviati arrivino correttamente al destinatario. Se i dati vengono persi o danneggiati durante il trasferimento, TCP si occupa di rilevare l'errore e richiedere la ritrasmissione dei pacchetti mancanti. TCP gestisce il flusso di dati per evitare che il destinatario venga sopraffatto da troppi pacchetti inviati troppo rapidamente. Utilizza un meccanismo chiamato finestra di ricezione per regolare la velocità di invio dei dati."
+    }
+  ],
+  "tcp_udp_text2": [
+    {
+      "text": "UDP (User Datagram Protocol) è un protocollo di trasporto appartenente alla suite di protocolli TCP/IP ed è definito al livello 4 del modello OSI. A differenza del TCP, che è orientato alla connessione e garantisce la consegna affidabile dei dati, UDP è un protocollo senza connessione, che non offre alcuna garanzia sulla consegna dei pacchetti o sull'ordine in cui arrivano. UDP è progettato per essere più semplice e veloce, ma meno affidabile rispetto a TCP. UDP ha un overhead molto inferiore rispetto a TCP, poiché non ha bisogno di gestire la connessione, la sequenza dei pacchetti, la ritrasmissione dei dati o la gestione del flusso. Questo lo rende più veloce, con minori costi computazionali. UDP invia i dati come datagrammi (pacchetti) di dimensioni variabili. Ogni pacchetto UDP può contenere una quantità diversa di dati, che può essere interpretata come un singolo blocco di informazione. UDP è spesso scelto per applicazioni che richiedono una bassa latenza e tollerano la perdita di alcuni pacchetti, come lo streaming audio e video in tempo reale, o i giochi online."
+    }
+  ],
+  "caratteristiche": [
+    {
+      "caratteristica": "Tipo di Protocollo",
+      "tcp": "Orientato alla connessione",
+      "udp": "Senza connessione"
+    },
+    {
+      "caratteristica": "Affidabilità",
+      "tcp": "Affidabile: garantisce la consegna dei dati, gestione degli errori, ritrasmissione dei pacchetti persi.",
+      "udp": "Non affidabile: non garantisce la consegna dei dati."
+    },
+    {
+      "caratteristica": "Controllo del flusso",
+      "tcp": "Utilizza il controllo del flusso per regolare la velocità di invio dei pacchetti.",
+      "udp": "Non ha controllo del flusso."
+    },
+    {
+      "caratteristica": "Controllo della congestione",
+      "tcp": "Sì, TCP include meccanismi di controllo della congestione per evitare il sovraccarico della rete.",
+      "udp": "No, UDP non ha meccanismi per il controllo della congestione."
+    },
+    {
+      "caratteristica": "Gestione della connessione",
+      "tcp": "Prima dell'invio dei dati, stabilisce una connessione tra il client e il server tramite il processo di 'handshake'.",
+      "udp": "Invia i pacchetti senza stabilire una connessione."
+    },
+    {
+      "caratteristica": "Velocità",
+      "tcp": "Più lento a causa dell'overhead per la gestione della connessione, del controllo del flusso e della ritrasmissione.",
+      "udp": "Più veloce, meno overhead, senza gestione della connessione."
+    },
+    {
+      "caratteristica": "Controllo degli errori",
+      "tcp": "Mediante checksum e ritrasmissione dei pacchetti persi.",
+      "udp": "Mediante checksum, ma senza ritrasmissione dei pacchetti persi."
+    },
+    {
+      "caratteristica": "Ordinamento dei pacchetti",
+      "tcp": "I pacchetti arrivano nell'ordine in cui sono stati inviati, grazie alla numerazione dei pacchetti e alla gestione del flusso.",
+      "udp": "I pacchetti possono arrivare nell'ordine errato."
+    },
+    {
+      "caratteristica": "Connessione",
+      "tcp": "Stabile e garantita tra il client e il server.",
+      "udp": "Senza garanzie: i pacchetti sono inviati indipendentemente."
+    },
+    {
+      "caratteristica": "Esempi di applicazioni",
+      "tcp": "HTTP, FTP, SMTP, SSH, IMAP, POP3, Telnet.",
+      "udp": "DNS, VoIP, streaming video/audio in tempo reale, giochi online."
+    }
+  ],
+  "termini": [
+    {
+      "termine": "Socket",
+      "definizione": "Una <strong>socket</strong> è un'interfaccia software che consente la comunicazione tra due applicazioni su una rete. Viene utilizzata per inviare e ricevere dati tra dispositivi su una rete, come ad esempio un server e un client. Puoi approfondire il concetto di socket nella sezione <a href='socket.html'>Socket</a>."
+    },
+    {
+      "termine": "Client",
+      "definizione": "Il <strong>client</strong> è un'applicazione o un dispositivo che invia richieste a un server e riceve risposte. Ad esempio, un browser web è un client che invia richieste HTTP a un server web. Per maggiori dettagli, visita la sezione <a href='index.html'>Comunicazione Server-Client</a>."
+    },
+    {
+      "termine": "Server",
+      "definizione": "Il <strong>server</strong> è un sistema che riceve richieste da un client e fornisce una risposta o un servizio. Ad esempio, un server web fornisce contenuti a un client che li richiede tramite un browser. Scopri di più nella sezione <a href='index.html'>Comunicazione Server-Client</a>."
+    },
+    {
+      "termine": "TCP",
+      "definizione": "Il <strong>TCP</strong> (Transmission Control Protocol) è un protocollo di comunicazione orientato alla connessione, che garantisce che i dati vengano ricevuti correttamente. È ampiamente utilizzato in applicazioni che richiedono affidabilità, come HTTP e FTP. Leggi di più nella sezione <a href='tcp_udp.html'>TCP vs UDP</a>."
+    },
+    {
+      "termine": "UDP",
+      "definizione": "Il <strong>UDP</strong> (User Datagram Protocol) è un protocollo di comunicazione senza connessione, che non garantisce la consegna dei pacchetti né il loro ordine. È utilizzato in applicazioni che richiedono velocità, come lo streaming video e giochi online. Approfondisci nella sezione <a href='tcp_udp.html'>TCP vs UDP</a>."
+    },
+    {
+      "termine": "IP",
+      "definizione": "Il <strong>IP</strong> (Internet Protocol) è un protocollo di rete che gestisce l'instradamento dei pacchetti dati tra dispositivi sulla rete. È fondamentale per la comunicazione su Internet. Scopri di più nella sezione <a href='osi.html'>Modello OSI</a>."
+    },
+    {
+      "termine": "Porta",
+      "definizione": "Una <strong>porta</strong> è un punto di accesso logico per la comunicazione tra applicazioni su una rete. Ogni applicazione di rete ascolta su una porta specifica per ricevere i dati. Maggiori dettagli nella sezione <a href='socket.html'>Socket</a>."
+    },
+    {
+      "termine": "Protocollo",
+      "definizione": "Un <strong>protocollo</strong> è un insieme di regole che definiscono come i dispositivi comunicano tra loro su una rete. Alcuni esempi sono TCP, UDP, HTTP. Approfondisci nella sezione <a href='tcp_udp.html'>TCP vs UDP</a>."
+    },
+    {
+      "termine": "Handshaking",
+      "definizione": "Il <strong>handshaking</strong> è il processo iniziale di stabilimento di una connessione tra un client e un server, come avviene nel TCP. Per maggiori informazioni, visita la sezione <a href='tcp_udp.html'>TCP vs UDP</a>."
+    }
+  ]
+}
